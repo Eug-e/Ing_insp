@@ -16,7 +16,7 @@ from beltex.views import Spec
 from django.conf import settings
 from django.conf.urls.static import static
 from beltex.views import Obj
-
+from beltex.views import contacts
 urlpatterns = [
     path('line1', index),
     path('line2', str1),
@@ -33,5 +33,6 @@ urlpatterns = [
     path('line14', Costs),
     path('line15', Spec),
     path('line16', Obj),
+    path('line17', contacts)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

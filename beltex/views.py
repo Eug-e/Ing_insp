@@ -99,3 +99,6 @@ def Spec (request):
 
 def Obj (request):
     return render (request, 'objects.html')
+
+def contacts (request):
+    return render (request, 'Contacts.html')
