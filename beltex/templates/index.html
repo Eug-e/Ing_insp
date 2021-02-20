@@ -30,17 +30,13 @@
     <div class="row">
         <div class="col-3" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
-
                 <a class="btn btn-outline-dark" href="line16">Наши объекты </a>
 <!--                <h3>{% trans "Objects" %}</h3>-->
-
                 <a class="btn btn-outline-dark" href="line15">Специалисты</a>
 <!--                <h3>{% trans "Specialists" %}</h3>-->
-                <a class="btn btn-outline-dark" href="line17">Контакты</a>
+                <a class="btn btn-outline-dark" href="line17">Обратная связь</a>
 <!--                <h3>{% trans "Contacts" %}</h3>-->
                 <a class="btn btn-outline-dark" href="line14">Расчет стоимости обследования</a>
-
-
             </div>
         </div>
         <div class="col-7" style = "padding: 0px" style="height: 5000px">
@@ -94,9 +90,9 @@
     </div>
     <!-- /.row -->
 
-    <!-- Portfolio Section -->
 
 
+        <a href="/download?start={{ start }}&finish={{ finish }}"> Скачать</a>
 
   </div>
                         <p><font size="6" color="black" face="Impact">Наши сертификаты</font>
@@ -117,17 +113,17 @@
         <div class="col-2" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
 
-                <a href = "line7" >Log out</a>
-
-                <form method = 'post' action = "/line6">
-                    <input type = "text" name = "username">
-                    <input type = "password" name = "password">
-                    <input type = "submit">
 
                 {% if request.user.is_authenticated %} Hello, {{request.user.username}}
 
                 {% else %}Please, login {% endif %}
-                <a class="btn btn-secondary" href="line10">Регистрация</a>
+                <form method = 'post' action = "/line6">
+                    <input type = "text" name = "username">
+                    <input type = "password" name = "password">
+                    <input type = "submit" class="btn btn-outline-dark" style="width: 100px">
+
+                <a class="btn btn-outline-dark" href = "line7" style="width: 100px">Log out</a>
+                <a class="btn btn-outline-dark" href="line10" style="width: 200px">Регистрация</a>
                 </form>
             </div>
         </div>

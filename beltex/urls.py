@@ -17,6 +17,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from beltex.views import Obj
 from beltex.views import contacts
+from beltex.views import server
+from beltex.views import server2
+from beltex.views import cost
+from beltex.views import get_csv
 urlpatterns = [
     path('line1', index),
     path('line2', str1),
@@ -33,6 +37,10 @@ urlpatterns = [
     path('line14', Costs),
     path('line15', Spec),
     path('line16', Obj),
-    path('line17', contacts)
+    path('line17', contacts),
+    path('line18', server),
+    path('line19', server2),
+    path('cost', cost),
+    path('download', get_csv)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

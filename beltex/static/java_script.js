@@ -233,11 +233,11 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
-    $('#id47').click(function(e){
+    $('#id47').click(function(shop){
     x = $("#id46").val()
     if (x.indexOf('1')!=-1) {
         alert ('нельзя писать 1')
-        e.preventDefault()
+        shop.preventDefault()
     }
  })
 })
@@ -282,4 +282,3 @@ $(document).ready(function() {
  })
 })
 
-$('.carousel').carousel()

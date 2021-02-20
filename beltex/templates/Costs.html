@@ -31,7 +31,7 @@
 
                 <a class="btn btn-outline-dark" href="line15">Специалисты</a>
 
-                <input class="btn btn-outline-dark" type="submit"  value="Контакты" >
+                <input class="btn btn-outline-dark" type="submit"  value="Обратная связь" >
 
                 <a class="btn btn-outline-dark" href="line14">Расчет стоимости обследования</a>
             </div>
@@ -39,131 +39,74 @@
           <div class="col-7" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
                 <p><font size="6" color="black" face="Impact">Расчет стоимости обследования объекта</font>
-                <table class="table">
-  <thead>
-    <tr>
-
-      <th scope="col">Показатель</th>
-      <th scope="col">Значение</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-
-      <td>Строительный объем здания, м3</td>
-      <td><input type = "text" name = "volume" id='id15'></td>
-
-    </tr>
-    <tr>
-
-      <td>Обследование фундаментов</td>
-      <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-
-    </tr>
-    <tr>
-
-      <td>Обследование колонн</td>
-       <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-    </tr>
-      <tr>
-
-        <td>Обследование стен</td>
-        <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-      </tr>
-    <tr>
-
-        <td>Обследование перекрытия и покрытия</td>
-        <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-      </tr>
-    <tr>
-
-        <td>Обследование кровли</td>
-        <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-      </tr>
-    <tr>
-
-        <td>Детальное обследование</td>
-        <td> <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
-
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div></td>
-
-      </tr>
-    <tr>
-<!--        <td><button id='id16'>Расчет</button</td>-->
-        <td><button class="btn btn-outline-dark" id='id16' >Расчет</button></td>
-      </tr>
-  </tbody>
-</table>
-
-
+                <form method = 'POST' action = 'cost'>
+                    <table class="table"
+                      <thead>
+                        <tr>
+                          <th scope="col">Показатель</th>
+                          <th scope="col" align="center">Значение </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Строительный объем здания, м3</td>
+                          <td><input type = "text" name = "volume"></td>
+                        </tr>
+                        <tr>
+                          <td>Обследование фундаментов</td>
+                          <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                            </div>
+                                          </div></td>
+                        </tr>
+                        <tr>
+                          <td>Обследование колонн</td>
+                           <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                            </div>
+                                          </div></td>
+                        </tr>
+                          <tr>
+                            <td>Обследование стен</td>
+                            <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                            </div>
+                            </div></td>
+                          </tr>
+                        <tr>
+                            <td>Обследование перекрытия и покрытия</td>
+                            <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                            </div>
+                                          </div></td>
+                        </tr>
+                        <tr>
+                            <td>Обследование кровли</td>
+                            <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                             </div>
+                                          </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Детальное обследование</td>
+                            <td> <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                            </div>
+                                          </div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                        <p><button class="btn btn-outline-dark" id='id16' >Расчет</button><h2>{{ header }} byn</h2>
+                </form>
             </div>
-
           </div>
-
       </div>
   </div>
 <footer class="bg-light text-center text-lg-start">
