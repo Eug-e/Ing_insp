@@ -10,13 +10,15 @@
         }
 
     </style>
-    <img src="/static/ing.png" width="450">
+
 <link rel="stylesheet" href="static/css/bootstrap.min.css" align="center">
 <script src="static/js/jquery-3.3.1.min.js"></script>
 <script src="static/js/popper.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
 <script src="/static/java_script.js"></script>
-
+    <a href="line4">
+        <img src="/static/ing.png" width="450">
+    </a>
 </head>
 <body>
 
@@ -27,20 +29,21 @@
       <div class="row">
           <div class="col-3" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
-                <a class="btn btn-outline-dark" href="line4">Главная</a>
 
+                <a class="btn btn-outline-dark" href="line16">Наши объекты </a>
                 <a class="btn btn-outline-dark" href="line15">Специалисты</a>
 
-                <input class="btn btn-outline-dark" type="submit"  value="Обратная связь" >
+                <a class="btn btn-outline-dark" href="line17">Обратная связь</a>
 
                 <a class="btn btn-outline-dark" href="line14">Расчет стоимости обследования</a>
             </div>
           </div>
           <div class="col-7" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
+
                 <p><font size="6" color="black" face="Impact">Расчет стоимости обследования объекта</font>
                 <form method = 'POST' action = 'cost'>
-                    <table class="table"
+                    <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">Показатель</th>
@@ -50,13 +53,13 @@
                       <tbody>
                         <tr>
                           <td>Строительный объем здания, м3</td>
-                          <td><input type = "text" name = "volume"></td>
+                          <td><input type = "number" name = "volume" id="id_1"></td>
                         </tr>
                         <tr>
                           <td>Обследование фундаментов</td>
                           <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "foundations">
                                             </div>
                                           </div></td>
                         </tr>
@@ -64,7 +67,7 @@
                           <td>Обследование колонн</td>
                            <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "columns">
                                             </div>
                                           </div></td>
                         </tr>
@@ -72,7 +75,7 @@
                             <td>Обследование стен</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "walls">
                                             </div>
                             </div></td>
                           </tr>
@@ -80,7 +83,8 @@
                             <td>Обследование перекрытия и покрытия</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "overlap">
+
                                             </div>
                                           </div></td>
                         </tr>
@@ -88,16 +92,17 @@
                             <td>Обследование кровли</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "roof">
                                              </div>
                                           </div>
+
                             </td>
                         </tr>
                         <tr>
                             <td>Детальное обследование</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="">
+                                              <input class="form-check-input" type="checkbox" name = "detail">
                                             </div>
                                           </div></td>
                         </tr>
@@ -117,9 +122,9 @@
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
 
-        <p>
-          <img src="/static/ing.png" width="300" >
-        </p>
+            <a href="line4">
+        <img src="/static/ing.png" width="300">
+    </a>
       </div>
       <!--Grid column-->
 

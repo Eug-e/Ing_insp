@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Production (models.Model):
     specialist = models.CharField(max_length=100)
@@ -18,6 +19,9 @@ class Archive (models.Model):
     specialist = models.CharField(max_length=100)
     date = models.IntegerField(default=0)
 
-class Men (models.Model):
-    name = models.CharField(max_length=100)
-    age = models.CharField(max_length=100)
+
+class Message(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20)
+    message = models.CharField(max_length=250)

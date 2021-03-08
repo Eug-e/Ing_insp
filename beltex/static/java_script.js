@@ -233,11 +233,11 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
-    $('#id47').click(function(shop){
+    $('#id47').click(function(e){
     x = $("#id46").val()
     if (x.indexOf('1')!=-1) {
         alert ('нельзя писать 1')
-        shop.preventDefault()
+        e.preventDefault()
     }
  })
 })
@@ -273,12 +273,5 @@ $(document).ready(function() {
     })
 });
 
-$(document).ready(function() {
-    $('#id16').click(function(e){
-    x = $("#id15").val() {
-        alert ($('#id15').val())
-        e.preventDefault()
-    }
- })
-})
+
 

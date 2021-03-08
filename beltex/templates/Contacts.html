@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacts</title>
-<img src="/static/ing.png" width="450">
+<!--<img src="/static/ing.png" width="450">-->
 <link rel="stylesheet" href="static/css/bootstrap.min.css">
 <script src="static/js/jquery-3.3.1.min.js"></script>
 <script src="static/js/popper.min.js"></script>
@@ -21,6 +21,9 @@
         transform: scale(1.8); /* Увеличиваем масштаб */
        }
     </style>
+    <a href="line4">
+        <img src="/static/ing.png" width="450">
+    </a>
 </head>
 <body>
 <div class="container-fluid">
@@ -28,7 +31,7 @@
       <div class="row">
           <div class="col-3" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
-                <a class="btn btn-outline-dark" href="line4">Главная</a>
+                <a class="btn btn-outline-dark" href="line16">Наши объекты </a>
 
                 <a class="btn btn-outline-dark" href="line15">Специалисты</a>
 
@@ -64,13 +67,14 @@
                         </div>
 
                         <div class="md-form">
-                          <input type="text" id="contact-email" class="form-control">
+                          <input type="email" id="contact-email" class="form-control">
                           <font size="4" color="black" face="Impact">Email</font>
                         </div>
 
                         <div class="md-form">
-                          <input type="text" id="contact-Subject" class="form-control">
+                          <input type="tel" id="contact-Subject" class="form-control">
                           <font size="4" color="black" face="Impact">Телефон</font>
+
                         </div>
 
                       </form>

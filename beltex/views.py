@@ -1,13 +1,11 @@
-
 from django.http import HttpResponse
-from beltex.models import Specialists, Men
+from beltex.models import Specialists
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import csv
-
 from django.utils.translation import ugettext as _
 
 # def translate(request):
@@ -19,10 +17,10 @@ from django.utils.translation import ugettext as _
 def index(request):
     return HttpResponse("привет")
 
-def str1(request):
-    x = Men.objects.filter(name='Hog')
-    y = x[0]
-    return HttpResponse(y.name)
+# def str1(request):
+#     x = Men.objects.filter(name='Hog')
+#     y = x[0]
+#     return HttpResponse(y.name)
 
 def Ver(request):
     z = Specialists.objects.filter(specialist="Tacko Fall")
@@ -39,7 +37,7 @@ def ex41(request):
 def login_user (request):
     user = authenticate(
         username=request.POST['username'],
-        password=request.POST['password']
+        password=request.POST['password'],
     )
     if user is None:
         return render(request, 'invalid.html', {})
@@ -57,23 +55,22 @@ def log_out (request):
                       {}
                       )
 
-def First (request):
-    return render(request, 'First.html')
-
-def Second (request):
-    return render(request, 'Second.html')
-
-def Common (request):
-    return render(request, 'Common.html')
-
+# def First (request):
+#     return render(request, 'First.html')
+#
+# def Second (request):
+#     return render(request, 'Second.html')
+#
+# def Common (request):
+#     return render(request, 'Common.html')
+# РЕгистрация пользователя
 def Reg (request):
     user = User.objects.create_user(
         request.POST['login'],
-        password1=request.POST['password1'],
-        password2=request.POST['password2'],
-        first_name=request.POST['reg_name'],
+
         last_name=request.POST['reg_surname'],
-        email=request.POST['reg_email']
+        email=request.POST['reg_email'],
+        password=request.POST['password'],
     )
     return HttpResponse('ok')
 
@@ -107,42 +104,49 @@ def Obj (request):
 def contacts (request):
     return render(request, 'Contacts.html')
 
-def server (request):
-    Men.objects.filter(
-        id=request.POST['id']
-    ).update(
-        name=request.POST['name'],
-        age=int(request.POST['age'])
-    )
-    return JsonResponse({'status':'ok'})
+# def server (request):
+#     Men.objects.filter(
+#         id=request.POST['id']
+#     ).update(
+#         name=request.POST['name'],
+#         age=int(request.POST['age'])
+#     )
+#     return JsonResponse({'status':'ok'})
 
-def server2 (request):
-    Men.objects.filter(
-        id=request.GET['id']
-    )
 
-    return JsonResponse({'status':'ok'})
 
 def cost(request):
-    x = request.POST["volume"]
-    if x == '10':
-        return render(request, 'Costs.html', context='no')
-    else:
-        z = int(x) * 3
-        y = {'header': z}
-        return render(request, 'Costs.html', context=y)
+    volume = request.POST["volume"]
 
-def get_csv(request):
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = \
-        'attachment; filename="somefilename.csv"'
+    # found = request.POST["foundations"]
+    # col = request.POST["columns"]
+    # wall = request.POST["walls"]
+    # overlap = request.POST["overlap"]
+    # roof = request.POST["roof"]
+    # detail = request.POST["detail"]
 
-    writer = csv.writer(response)
-    writer.writerow(['id', 'name'])
-    persons = Men.objects.filter(
-        age__gt= int(request.GET['start']),
-        age__lt=int(request.GET['finish']),
-    )
-    for person in persons:
-        writer.writerow([person.name, person.name])
-    return response
+
+    z = int(volume) * 3
+    price = {'header': z}
+    return render(request, 'Costs.html', context=price)
+
+# def get_csv(request):
+#     response = HttpResponse(content_type='text/csv')
+#     response['Content-Disposition'] = \
+#         'attachment; filename="somefilename.csv"'
+#
+#     writer = csv.writer(response)
+#     writer.writerow(['id', 'name'])
+#     persons = Men.objects.filter(
+#         age__gt= int(request.GET['start']),
+#         age__lt=int(request.GET['finish']),
+#     )
+#     for person in persons:
+#         writer.writerow([person.name, person.name])
+#     return response
+
+# def spec_upd(request):
+#     one = Specialists.objects.filter(id=1)
+#     two = Specialists.objects.filter(id=2)
+#     three = Specialists.objects.filter(id=3)
+#     four = Specialists.objects.filter(id=4)
