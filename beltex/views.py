@@ -8,12 +8,6 @@ from django.http import JsonResponse
 import csv
 from django.utils.translation import ugettext as _
 
-# def translate(request):
-#     return render_to_response(
-#         'index.html',
-#         {'title': _('Контакты')}
-#     )
-
 def index(request):
     return HttpResponse("привет")
 
@@ -55,19 +49,10 @@ def log_out (request):
                       {}
                       )
 
-# def First (request):
-#     return render(request, 'First.html')
-#
-# def Second (request):
-#     return render(request, 'Second.html')
-#
-# def Common (request):
-#     return render(request, 'Common.html')
-# РЕгистрация пользователя
+# user registration
 def Reg (request):
     user = User.objects.create_user(
         request.POST['login'],
-
         last_name=request.POST['reg_surname'],
         email=request.POST['reg_email'],
         password=request.POST['password'],
