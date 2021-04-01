@@ -19,7 +19,6 @@ class Archive (models.Model):
     specialist = models.CharField(max_length=100)
     date = models.IntegerField(default=0)
 
-
 class Message(models.Model):
     name = models.CharField(max_length=20)
     email = models.CharField(max_length=20)

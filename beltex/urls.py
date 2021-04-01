@@ -22,6 +22,9 @@ from beltex.views import contacts
 from beltex.views import cost
 # from beltex.views import get_csv
 from beltex.views import Reg
+from beltex.views import guest
+from beltex.views import inbox
+from beltex.views import spec_upd
 urlpatterns = [
     path('line1', index),
     # path('line2', str1),
@@ -43,6 +46,10 @@ urlpatterns = [
     # path('line18', server),
     # path('line19', server2),
     path('cost', cost),
+    path('home', guest),
+    path('inbox_message', inbox),
+    path('get_specialist', spec_upd),
+
     # path('download', get_csv)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

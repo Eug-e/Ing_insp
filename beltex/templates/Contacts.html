@@ -46,62 +46,42 @@
 
              <!--Section: Contact v.2-->
             <section class="section">
-
-
               <div class="card">
-
                 <div class="card-body">
-
-                  <!--Google map-->
-
-
                   <div class="row">
-
-                    <!--Grid column-->
                     <div class="col-md-6 mb-4">
-                      <form>
 
+                        <form method = 'POST' action = 'inbox_message'>
                         <div class="md-form">
-                          <input type="text" id="contact-name" class="form-control" >
+                          <input type="text" name="name" class="form-control" >
                           <font size="4" color="black" face="Impact">Имя</font>
                         </div>
 
                         <div class="md-form">
-                          <input type="email" id="contact-email" class="form-control">
+                          <input type="email" name="e_mail" class="form-control">
                           <font size="4" color="black" face="Impact">Email</font>
                         </div>
 
                         <div class="md-form">
-                          <input type="tel" id="contact-Subject" class="form-control">
+                          <input type="tel" name="phone_number" class="form-control">
                           <font size="4" color="black" face="Impact">Телефон</font>
-
                         </div>
 
-                      </form>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6 mb-4">
-                      <div class="md-form primary-textarea">
-                        <textarea id="contact-message" class="md-textarea form-control mb-0" rows="5" style="padding-bottom: 1.2rem;"></textarea>
-                        <font size="4" color="black" face="Impact">Ваше сообщение</font>
-                      </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-                      <div class="text-center">
-                        <button class="btn btn-outline-dark" id='id16' >Отправить</button>
-                      </div>
-
-                  </div>
-
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="md-form primary-textarea">
+                            <textarea name="message" class="md-textarea form-control mb-0" rows="5"></textarea>
+                            <font size="4" color="black" face="Impact">Ваше сообщение</font>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="text-center">
+                            <button class="btn btn-outline-dark" type = "submit">Отправить</button>
+                          </div>
+                        </div>
+                        </form>
                 </div>
-
               </div>
-
             </section>
           </div>
     </div>

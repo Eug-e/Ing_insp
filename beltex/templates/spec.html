@@ -46,12 +46,13 @@
           <div class="col-7" style = "padding: 0px" style="height: 5000px">
             <div class = "card card-body bg-light" align="center" >
                 <p><font size="6" color="black" face="Impact">Наши специалисты</font>
-                <div class="container">
+                <form method = 'POST' action = 'get_specialist'>
+                    <div class="container">
                     <div class="card-group">
                       <div class="card">
                         <img class="card-img-top" src="/static/tarWest.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Taribo West</h5>
+                          <h5 class="card-title">{{ one }}</h5>
                           <p class="card-text">Ведущий инженер-обследователь. Опыт работы в обследовании с 2012г. Стажировки на объектах в Италии, Англии, Германии, Франции</p>
 
                         </div>
@@ -59,7 +60,7 @@
                       <div class="card">
                         <img class="card-img-top" src="/static/carWalder.jpeg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Carlos Walderrama</h5>
+                          <h5 class="card-title">{{ two }}</h5>
                           <p class="card-text">Инженер обследователь 1 категории. Обладатель бронзовых медалей Кубка Америки '87, '93, '95 </p>
 
                         </div>
@@ -67,7 +68,7 @@
                       <div class="card">
                         <img class="card-img-top" src="/static/jim.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Jimmy Hendrix</h5>
+                          <h5 class="card-title">{{ three }}</h5>
                           <p class="card-text">Ведущий инженер-обследователь. Опыт работы в обследовании с 1980г. Лауреат международных и республиканских конкурсов</p>
 
                         </div>
@@ -75,11 +76,11 @@
                         <div class="card">
                         <img class="card-img-top" src="/static/fall.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Tacko Fall</h5>
+                          <h5 class="card-title">{{ four }}</h5>
                           <p class="card-text">Техник. Опыт работы с 2020г. Статистика BPG:0.6 PPG:3.3</p>
-
                         </div>
-                      </div>
+                        </div>
+                        </form>
                     </div>
 
                 </div>

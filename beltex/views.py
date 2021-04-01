@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from beltex.models import Specialists
+from beltex.models import Specialists, Archive
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
@@ -23,9 +23,9 @@ def index(request):
 #     return HttpResponse(y.name)
 
 def Ver(request):
-    z = Specialists.objects.filter(specialist="Tacko Fall")
+    z = Specialists.objects.filter(id=1)
     w = z[0]
-    return HttpResponse(w.car)
+    return HttpResponse([w.age, w.skills, w.car])
 
 def ex41(request):
 
@@ -48,10 +48,10 @@ def login_user (request):
 def log_out (request):
     if request.user.is_authenticated:
         logout(request)
-        return HttpResponseRedirect('line4')
+        return HttpResponseRedirect('home')
     else:
         return render(request,
-                      'index.html',
+                      'home.html',
                       {}
                       )
 
@@ -72,7 +72,7 @@ def Reg (request):
         email=request.POST['reg_email'],
         password=request.POST['password'],
     )
-    return HttpResponse('ok')
+    return HttpResponseRedirect('line4')
 
 def Form (request):
     return render(request, 'Registration.html')
@@ -104,6 +104,9 @@ def Obj (request):
 def contacts (request):
     return render(request, 'Contacts.html')
 
+def guest (request):
+    return render(request, 'home.html')
+
 # def server (request):
 #     Men.objects.filter(
 #         id=request.POST['id']
@@ -130,6 +133,17 @@ def cost(request):
     price = {'header': z}
     return render(request, 'Costs.html', context=price)
 
+def inbox(request):
+    name = request.POST['name']
+    e_mail = request.POST['e_mail']
+    phone_number = request.POST['phone_number']
+    message = request.POST['message']
+    client = Archive(object=name, specialist=e_mail)
+    client.save()
+    return render(request, 'home.html')
+
+
+
 # def get_csv(request):
 #     response = HttpResponse(content_type='text/csv')
 #     response['Content-Disposition'] = \
@@ -145,8 +159,13 @@ def cost(request):
 #         writer.writerow([person.name, person.name])
 #     return response
 
-# def spec_upd(request):
-#     one = Specialists.objects.filter(id=1)
-#     two = Specialists.objects.filter(id=2)
-#     three = Specialists.objects.filter(id=3)
-#     four = Specialists.objects.filter(id=4)
+def spec_upd(request):
+    one = Specialists.objects.filter(id=1)
+    two = Specialists.objects.filter(id=2)
+    three = Specialists.objects.filter(id=3)
+    four = Specialists.objects.filter(id=4)
+    first = {'one': one}
+    second = {'two': two}
+    third = {'three': three}
+    fourth = {'four': four}
+    return render(request, 'spec.html', context=first)
