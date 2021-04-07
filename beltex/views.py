@@ -1,12 +1,10 @@
 from django.http import HttpResponse
-from beltex.models import Specialists, Archive
+from beltex.models import Specialists, Message
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-import csv
-from django.utils.translation import ugettext as _
 
 def index(request):
     return HttpResponse("привет")
@@ -101,20 +99,40 @@ def guest (request):
 #     )
 #     return JsonResponse({'status':'ok'})
 
-
-
 def cost(request):
     volume = request.POST["volume"]
 
-    # found = request.POST["foundations"]
-    # col = request.POST["columns"]
-    # wall = request.POST["walls"]
-    # overlap = request.POST["overlap"]
-    # roof = request.POST["roof"]
-    # detail = request.POST["detail"]
+    if "fund" in request.POST:
+        fund = 1.3
+    else:
+        fund = 1
 
+    if "column" in request.POST:
+        column = 1.1
+    else:
+        column = 1
 
-    z = int(volume) * 3
+    if "wall" in request.POST:
+        wall = 1.5
+    else:
+        wall = 1
+
+    if "over" in request.POST:
+        over = 1.3
+    else:
+        over = 1
+
+    if "roof" in request.POST:
+        roof = 1.3
+    else:
+        roof = 1
+
+    if "deta" in request.POST:
+        deta = 1.3
+    else:
+        deta = 1
+
+    z = round(int(volume) * 3 * fund * column * wall * over * roof * deta, 1)
     price = {'header': z}
     return render(request, 'Costs.html', context=price)
 
@@ -123,26 +141,9 @@ def inbox(request):
     e_mail = request.POST['e_mail']
     phone_number = request.POST['phone_number']
     message = request.POST['message']
-    client = Archive(object=name, specialist=e_mail)
+    client = Message(name=name, e_mail=e_mail, phone_number=phone_number, message=message)
     client.save()
     return render(request, 'home.html')
-
-
-
-# def get_csv(request):
-#     response = HttpResponse(content_type='text/csv')
-#     response['Content-Disposition'] = \
-#         'attachment; filename="somefilename.csv"'
-#
-#     writer = csv.writer(response)
-#     writer.writerow(['id', 'name'])
-#     persons = Men.objects.filter(
-#         age__gt= int(request.GET['start']),
-#         age__lt=int(request.GET['finish']),
-#     )
-#     for person in persons:
-#         writer.writerow([person.name, person.name])
-#     return response
 
 def spec_upd(request):
     one = Specialists.objects.filter(id=1)

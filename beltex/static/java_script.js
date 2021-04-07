@@ -1,8 +1,3 @@
-//$(document).ready(function() {
-//    $('#id45').click(function(e){
-//    alert("Нажата кнопка id ='id45'")
-//    })
-//})
 
 $(document).ready(function() {
     $('#btn').click(function(e){
@@ -42,18 +37,3 @@ $(document).ready(function() {
         );
     })
 });
-
-//Checkbox
-
-       function getValue() {
-
-                                var checks = document.getElementaryByClassName('checks');
-                                var str = '';
-
-                                for (i = 0; i<6; i**) {
-                                    if (checks[i].checked === true) {
-                                    str +=checks[i].value + ' ';
-                                    }
-                                }
-                                alert(str);
-                            }

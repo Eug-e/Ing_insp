@@ -27,9 +27,7 @@
 
                 <a class="btn btn-outline-dark" href="line16">Наши объекты </a>
                 <a class="btn btn-outline-dark" href="line15">Специалисты</a>
-
                 <a class="btn btn-outline-dark" href="line17">Обратная связь</a>
-
                 <a class="btn btn-outline-dark" href="line14">Расчет стоимости обследования</a>
             </div>
           </div>
@@ -54,17 +52,15 @@
                           <td><label>Обследование фундаментов</label></td>
                           <td> <div class="form-group">
 <!--                               <div class="form-check">-->
-                                   <input class="checks" type="checkbox" value="fund">
+                                   <input class="checks" type="checkbox" name="fund">
 <!--                               </div>-->
                           </div></td>
                         </tr>
-
-                        <a href = "costs" onclick="getValue(); return false;">getVALUE</a>
                         <tr>
                           <td>Обследование колонн</td>
                            <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="colu">
+                                              <input class="form-check-input" type="checkbox" name="column">
                                             </div>
                                           </div></td>
                         </tr>
@@ -72,7 +68,7 @@
                             <td>Обследование стен</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="wall">
+                                              <input class="form-check-input" type="checkbox" name="wall">
                                             </div>
                             </div></td>
                           </tr>
@@ -80,7 +76,7 @@
                             <td>Обследование перекрытия и покрытия</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="over">
+                                              <input class="form-check-input" type="checkbox" name="over">
 
                                             </div>
                                           </div></td>
@@ -89,7 +85,7 @@
                             <td>Обследование кровли</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="roof">
+                                              <input class="form-check-input" type="checkbox" name="roof">
                                              </div>
                             </div>
                             </td>
@@ -98,18 +94,25 @@
                             <td>Детальное обследование</td>
                             <td> <div class="form-group">
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="deta">
+                                              <input class="form-check-input" type="checkbox" name="deta">
                                             </div>
                                           </div></td>
                         </tr>
                       </tbody>
                     </table>
                         <p><button class="btn btn-outline-dark">Расчет</button><h2>{{ header }} byn</h2>
+
                 </form>
             </div>
           </div>
       </div>
   </div>
+
+
+
+
+
+
 <footer class="bg-light text-center text-lg-start">
   <!-- Grid container -->
   <div class="container p-4">
@@ -117,34 +120,27 @@
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-
             <a href="line4">
         <img src="/static/ing.png" width="300">
     </a>
       </div>
       <!--Grid column-->
-
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-
         <p>"Engineering inspection",LCC</p>
         <p>Phone Number: (724) 843-3740</p>
         <p>Address: 57 Oak Dr, Beaver Falls, PA, 15010  </p>
 
         </p>
       </div>
-      <!--Grid column-->
     </div>
-    <!--Grid row-->
   </div>
-  <!-- Grid container -->
 
-  <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2020 Copyright:
     <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
-  <!-- Copyright -->
+
 </footer>
 </body>
 </html>
