@@ -4,8 +4,7 @@ from django.contrib.auth.models import User
 class Production (models.Model):
     specialist = models.CharField(max_length=100)
     object = models.CharField(max_length=100)
-    term = models.IntegerField(default=0)
-    price = models.IntegerField(default=0)
+    file = models.FileField(upload_to='static/')
 
 class Specialists (models.Model):
     specialist = models.CharField(max_length=100)

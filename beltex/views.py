@@ -1,10 +1,13 @@
 from django.http import HttpResponse
 from beltex.models import Specialists, Message
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.http import JsonResponse
+from django.core.files.storage import FileSystemStorage
+
+
 
 def index(request):
     return HttpResponse("привет")
@@ -155,3 +158,13 @@ def spec_upd(request):
     third = {'three': three}
     fourth = {'four': four}
     return render(request, 'spec.html', context=first)
+
+def upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['document']
+        print(uploaded_file.name)
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
+    return render(request, 'index.html')
+
+

@@ -39,6 +39,18 @@
                 <a class="btn btn-outline-dark" href="line17">Обратная связь</a>
 
                 <a class="btn btn-outline-dark" href="line14">Расчет стоимости обследования</a>
+
+
+
+
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <input type="file", name="document">
+    <button type="submit">Upload file</button>
+  </form>
+
+
             </div>
         </div>
         <div class="col-7" style = "padding: 0px" style="height: 5000px">

@@ -19,6 +19,8 @@ from beltex.views import Reg
 from beltex.views import guest
 from beltex.views import inbox
 from beltex.views import spec_upd
+from beltex.views import upload
+
 urlpatterns = [
     path('line1', index),
     path('line3', Ver),
@@ -38,5 +40,10 @@ urlpatterns = [
     path('home', guest),
     path('inbox_message', inbox),
     path('get_specialist', spec_upd),
+    path('upload', upload),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
